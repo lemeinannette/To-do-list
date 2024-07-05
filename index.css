@@ -1,117 +1,117 @@
-/* Reset and basic styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Setting up basic styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fff; /* Optional: Set a fallback background color for the body */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-family: Arial, sans-serif;
     height: 100vh;
     margin: 0;
+    font-size: 12px; 
 }
 
 .background-container {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.background-image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%; /* Adjust width to reduce size covered by the image */
-    height: auto; /* Maintain aspect ratio */
-    opacity: 0.3; /* Adjust opacity as needed */
-    z-index: -1;
-}
-
-.container {
-    position: relative;
-    max-width: 400px;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 24px;
-    text-align: center;
-    color: #e91e63; /* Pinkish color */
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    width: calc(100% - 80px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #e91e63; /* Pinkish color */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #c2185b; /* Darker pink on hover */
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background-color: #fce4ec; /* Light pink background for tasks */
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
+    width: 75%;
+    height: 75vh; 
+    margin: 0 auto; 
     display: flex;
+    justify-content: left;
     align-items: center;
 }
 
-li:last-child {
-    margin-bottom: 0;
+.background-image {
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        background-image: url('path/to/your-image.jpg');
+        
+        background-size: cover;
+        background-position: center;
 }
 
-.task-text {
-    flex-grow: 1;
-    font-size: 16px;
-    color: #333;
+.container {
+    width: 60%; 
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-.complete-button, .delete-button {
-    background-color: #e91e63; /* Pinkish color */
+h1 {
+    color: #e91e63; 
+    margin-bottom: 10px; 
+}
+
+/* Input and button styles */
+input[type="text"] {
+    width: 90%; 
+    padding: 8px; 
+    margin-bottom: 10px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px; 
+}
+
+#addTaskBtn {
+    background-color: #e91e63; 
     color: white;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 15px; 
     cursor: pointer;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 12px; 
+}
+
+#addTaskBtn:hover {
+    background-color: #c2185b; 
+}
+
+/* Task list styles */
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 0; 
+    width: 100%; 
+}
+
+#taskList li {
+    background-color: rgba(252, 228, 236, 0.8);
+    margin-bottom: 10px; 
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px; 
+}
+
+.completed {
+    text-decoration: line-through; 
+    opacity: 0.7;
+}
+
+/* Button styles */
+.complete-button, .delete-button {
+    background-color: #e91e63; 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px; 
     margin-left: 5px;
 }
 
 .complete-button:hover, .delete-button:hover {
-    background-color: #c2185b; /* Darker pink on hover */
-}
-
-.completed .task-text {
-    text-decoration: line-through; /* Strike-through effect for completed tasks */
-    opacity: 0.7; /* Reduced opacity for completed tasks */
+    background-color: #c2185b; 
 }
