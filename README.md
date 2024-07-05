@@ -72,4 +72,5 @@ If you encounter any issues or bugs, please report them in the [Issues](https://
 
 **Screenshot**
 ------------
-![Screenshot of To-Do List](https://github.com/lemeinannete/task-list-app/raw/main/screenshot.png)
+![Screenshot of Your Project](https://github.com/username/repository/raw/main/path/to/Screenshot%20from%202024-07-05%2018-30-47.png)
+
