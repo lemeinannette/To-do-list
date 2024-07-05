@@ -55,9 +55,8 @@ The application uses CSS for styling, so you can easily customize the appearance
 This application is licensed under the MIT License.
 
 **Author**
----------
-
-lemeinannete
+-------
+LEMEIN ANNETTE
 
 
 **Contributing**
