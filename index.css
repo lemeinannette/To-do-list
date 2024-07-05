@@ -1,59 +1,75 @@
-body {
-    font-family: 'Georgia', serif;
-    background-color: #fce4ec;
+/* Reset and basic styles */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    box-sizing: border-box;
 }
 
-section {
-    width: 80%;
-    max-width: 600px;
-    background: #ffffff;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff; /* Optional: Set a fallback background color for the body */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust width to reduce size covered by the image */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.3; /* Adjust opacity as needed */
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
-    color: #c2185b;
-}
-
-img {
-    display: block;
-    margin: 0 auto 20px;
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    color: #e91e63; /* Pinkish color */
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
-    width: calc(100% - 90px);
+    width: calc(100% - 80px);
     padding: 10px;
-    margin-right: 10px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #e91e63;
+    background-color: #e91e63; /* Pinkish color */
     color: white;
-    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #c2185b;
+    background-color: #c2185b; /* Darker pink on hover */
 }
 
 ul {
@@ -62,37 +78,40 @@ ul {
 }
 
 li {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    background-color: #fce4ec; /* Light pink background for tasks */
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8bbd0;
-}
-
-li .task-text {
-    flex-grow: 1;
-    margin-right: 10px;
-    color: #880e4f;
-}
-
-li .buttons {
-    display: flex;
-}
-
-li .buttons button {
-    margin-left: 5px;
-    background-color: #f06292;
+    padding: 10px;
     border-radius: 5px;
+    display: flex;
+    align-items: center;
 }
 
-li .buttons button:hover {
-    background-color: #ec407a;
+li:last-child {
+    margin-bottom: 0;
 }
 
-.completed {
-    text-decoration: line-through;
-    color: #999;
+.task-text {
+    flex-grow: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.complete-button, .delete-button {
+    background-color: #e91e63; /* Pinkish color */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.complete-button:hover, .delete-button:hover {
+    background-color: #c2185b; /* Darker pink on hover */
+}
+
+.completed .task-text {
+    text-decoration: line-through; /* Strike-through effect for completed tasks */
+    opacity: 0.7; /* Reduced opacity for completed tasks */
 }
