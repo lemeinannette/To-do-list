@@ -72,4 +72,4 @@ If you encounter any issues or bugs, please report them in the [Issues](https://
 
 **Screenshot**
 ------------
-![Screenshot of To-Do List](file:///home/lemein/Screenshots/Screenshot%20from%202024-07-05%2018-30-47.png)
+![Screenshot of To-Do List](https://github.com/lemeinannete/task-list-app/raw/main/Screenshot%20from%202024-07-05%2018-30-47.png)
