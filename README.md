@@ -14,6 +14,8 @@ A simple task list application built using HTML, CSS, and JavaScript. This appli
 * Delete tasks
 * Task list with scrollbar for easy navigation
 * Add description of the task
+
+
 **Getting Started**
 -------------------
 
