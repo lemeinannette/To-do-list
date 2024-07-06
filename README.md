@@ -4,7 +4,7 @@
 **Description**
 ---------------
 
-A simple task list application built using HTML, CSS, and JavaScript. This application allows users to add, complete, and delete tasks.
+A simple task list application built using HTML, CSS, and JavaScript. This application allows users to add, complete,description  and delete tasks.
 
 **Features**
 ------------
