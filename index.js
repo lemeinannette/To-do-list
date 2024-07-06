@@ -6,7 +6,12 @@ const taskList = document.getElementById('taskList');
 // Function to create a new task item
 function createTaskElement(taskText) {
     const li = document.createElement('li');
-    li.textContent = taskText;
+
+    // Create a container for the task text
+    const taskContainer = document.createElement('div');
+    taskContainer.classList.add('task-container');
+    taskContainer.textContent = taskText;
+    li.appendChild(taskContainer);
 
     // Add complete button
     const completeBtn = document.createElement('button');
@@ -24,9 +29,46 @@ function createTaskElement(taskText) {
         li.remove();
     });
 
-    // Append buttons to task item
+    // Add description button
+    const descriptionBtn = document.createElement('button');
+    descriptionBtn.textContent = 'Add Description';
+    descriptionBtn.classList.add('description-button');
+    descriptionBtn.addEventListener('click', () => {
+        descriptionInput.style.display = 'block';
+        saveDescriptionBtn.style.display = 'inline-block';
+        descriptionBtn.style.display = 'none';
+    });
+
+    // Add description input (initially hidden)
+    const descriptionInput = document.createElement('input');
+    descriptionInput.type = 'text';
+    descriptionInput.placeholder = 'Enter description';
+    descriptionInput.classList.add('description-input');
+    descriptionInput.style.display = 'none';
+
+    // Save description button (initially hidden)
+    const saveDescriptionBtn = document.createElement('button');
+    saveDescriptionBtn.textContent = 'Save Description';
+    saveDescriptionBtn.classList.add('save-description-button');
+    saveDescriptionBtn.style.display = 'none';
+    saveDescriptionBtn.addEventListener('click', () => {
+        const descriptionText = descriptionInput.value.trim();
+        if (descriptionText !== '') {
+            const description = document.createElement('p');
+            description.textContent = descriptionText;
+            description.classList.add('task-description');
+            taskContainer.appendChild(description);
+            descriptionInput.style.display = 'none';
+            saveDescriptionBtn.style.display = 'none';
+        }
+    });
+
+    // Append buttons and input to task item
     li.appendChild(completeBtn);
     li.appendChild(deleteBtn);
+    li.appendChild(descriptionBtn);
+    li.appendChild(descriptionInput);
+    li.appendChild(saveDescriptionBtn);
 
     return li;
 }

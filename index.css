@@ -1,117 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Setting up basic styles */
 body {
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    margin: 0;
-    font-size: 12px; 
+    background-color: #f8f9fa;
+    color: #333;
 }
 
 .background-container {
     position: relative;
-    width: 75%;
-    height: 75vh; 
-    margin: 0 auto; 
+    height: 100vh;
+    width: 100vw;
+    background-color: #f8bbd0; /* Matching the color of the image */
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
 }
 
-.background-image {
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-        background-image: url('path/to/your-image.jpg');
-        
-        background-size: cover;
-        background-position: center;
-}
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.dynamique-mag.com/wp-content/uploads/art-de-la-To-Do-List.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 1; }
 
 .container {
-    width: 60%; 
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 15px; 
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 2; }
 
 h1 {
-    color: #e91e63; 
-    margin-bottom: 10px; 
+    font-size: 2.5rem;
+    color: #d63384;
+    margin-bottom: 20px;
 }
 
-/* Input and button styles */
-input[type="text"] {
-    width: 90%; 
-    padding: 8px; 
-    margin-bottom: 10px; 
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 12px; 
+#taskInput {
+    width: calc(100% - 20px);
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #d63384;
+    border-radius: 10px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+#taskInput:focus {
+    border-color: #c2185b;
 }
 
 #addTaskBtn {
-    background-color: #e91e63; 
-    color: white;
+    background-color: #d63384;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    padding: 8px 15px; 
+    border-radius: 10px;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 12px; 
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
 #addTaskBtn:hover {
-    background-color: #c2185b; 
+    background-color: #c2185b;
 }
 
-/* Task list styles */
 #taskList {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
-    margin-left: 0; 
-    width: 100%; 
+    margin: 20px 0;
 }
 
 #taskList li {
-    background-color: rgba(252, 228, 236, 0.8);
-    margin-bottom: 10px; 
-    padding: 5px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #ffe0e6;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.task-text {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.task-actions {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    font-size: 12px; 
+}
+
+.complete-button, .delete-button, .description-button, .save-description-button {
+    background-color: #d63384;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    margin-right: 5px; 
+}
+
+.complete-button:hover, .delete-button:hover, .description-button:hover, .save-description-button:hover {
+    background-color: #c2185b;
 }
 
 .completed {
-    text-decoration: line-through; 
-    opacity: 0.7;
+    text-decoration: line-through;
+    color: #999;
 }
 
-/* Button styles */
-.complete-button, .delete-button {
-    background-color: #e91e63; 
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 12px; 
-    margin-left: 5px;
+.description-input {
+    width: calc(100% - 20px);
+    height: 30px;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 0.9rem;
+    border: 2px solid #d63384;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s ease;
 }
 
-.complete-button:hover, .delete-button:hover {
-    background-color: #c2185b; 
+.description-input:focus {
+    border-color: #c2185b;
 }
