@@ -1,77 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background-color: #f8f9fa;
     color: #333;
 }
 
-.background-container {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-color: #f8bbd0; /* Matching the color of the image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.background-container::before {
-    content: '';
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://www.dynamique-mag.com/wp-content/uploads/art-de-la-To-Do-List.jpg');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    opacity: 1; }
+    object-fit: cover;
+    opacity: 1;
+    z-index: -1; 
+}
 
 .container {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 600px;
+    top: 20%; 
+    left: 10%; 
+    width: 60%;
+    height: 65%; 
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    z-index: 2; }
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 h1 {
     font-size: 2.5rem;
-    color: #d63384;
+    color: #ffb6c1; 
     margin-bottom: 20px;
 }
 
-#taskInput {
-    width: calc(100% - 20px);
+input[type="text"], button {
+    width: calc(40% - 5px); 
     height: 40px;
     margin-bottom: 15px;
     padding: 10px;
     font-size: 1rem;
-    border: 2px solid #d63384;
+    border: 2px solid #ffc5c5;
     border-radius: 10px;
     outline: none;
     transition: border 0.3s ease;
 }
 
-#taskInput:focus {
-    border-color: #c2185b;
+input[type="text"]:focus, button:focus {
+    border-color: #ffb6c1;
 }
 
 #addTaskBtn {
-    background-color: #d63384;
+    background-color: #ffb6c1; 
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -82,72 +73,33 @@ h1 {
 }
 
 #addTaskBtn:hover {
-    background-color: #c2185b;
+    background-color: #ffc5c5; 
 }
 
-#taskList {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
+.completed .task-container {
+    text-decoration: line-through;
 }
 
-#taskList li {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-    background-color: #ffe0e6;
+.complete-button {
+    background-color: #4CAF50; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
     border-radius: 10px;
-    margin-bottom: 10px;
+    cursor: pointer;
 }
 
-.task-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
-
-.task-text {
-    flex: 1;
-    margin-bottom: 10px;
+.complete-button:hover {
+    background-color: #3e8e41; 
 }
 
 .task-actions {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
-.complete-button, .delete-button, .description-button, .save-description-button {
-    background-color: #d63384;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-    margin-right: 5px; 
-}
-
-.complete-button:hover, .delete-button:hover, .description-button:hover, .save-description-button:hover {
-    background-color: #c2185b;
-}
-
-.completed {
-    text-decoration: line-through;
-    color: #999;
-}
-
-.description-input {
-    width: calc(100% - 20px);
-    height: 30px;
-    margin-top: 10px;
-    padding: 5px;
-    font-size: 0.9rem;
-    border: 2px solid #d63384;
-    border-radius: 5px;
-    outline: none;
-    transition: border 0.3s ease;
-}
-
-.description-input:focus {
-    border-color: #c2185b;
+.task-actions button {
+    margin: 0 5px;
 }
