@@ -5,138 +5,124 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  overflow-x: hidden;
-}
-
-.background-image {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  filter: blur(4px) brightness(0.8);
-  z-index: -1;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #3cd8c9, #47f8e7, #7cf0e5);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
-  position: relative;
-  margin: 5% auto;
-  width: 60%;
-  padding: 25px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  width: 400px;
   text-align: center;
-  animation: fadeIn 0.8s ease-in-out;
 }
 
 h1 {
-  font-size: 2.5rem;
-  color: #ff6f91;
+  font-size: 2rem;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .input-group {
   display: flex;
-  align-items: center;
-  width: 100%;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
-.input-group input {
+input[type="text"] {
   flex: 1;
   padding: 12px;
-  font-size: 1rem;
-  border: 2px solid #ffb6c1;
-  border-radius: 10px 0 0 10px;
-  outline: none;
-}
-
-.input-group input:focus {
-  border-color: #ff6f91;
-}
-
-.input-group button {
-  padding: 0 20px;
-  background-color: #ff6f91;
-  color: white;
+  border-radius: 10px;
   border: none;
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  outline: none;
+  font-size: 1rem;
 }
 
-.input-group button:hover {
-  background-color: #ff8fa3;
+button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#addTaskBtn {
+  background: #3cd8c9;
+  color: #fff;
+}
+
+#addTaskBtn:hover {
+  background: #2cb9aa;
 }
 
 ul {
   list-style: none;
-  padding: 0;
-  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
-.task-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  margin: 10px 0;
-  padding: 12px 18px;
+li {
+  background: rgba(255, 255, 255, 0.85);
+  margin-bottom: 10px;
+  padding: 12px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.task-item:hover {
-  transform: translateY(-3px);
-}
-
-.task-container {
-  flex: 1;
-  font-size: 1rem;
-  text-align: left;
-}
-
-.task-description {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: #555;
-  font-style: italic;
-}
-
-.task-actions {
   display: flex;
-  gap: 10px;
   align-items: center;
+  justify-content: space-between;
+  animation: fadeIn 0.3s ease;
 }
 
-.task-actions button {
-  border: none;
-  background: transparent;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+.task-text {
+  flex: 1;
+  text-align: left;
+  margin-right: 10px;
 }
 
-.task-actions button:hover {
-  transform: scale(1.2);
-}
-
-.complete-button { color: #28a745; }
-.delete-button { color: #dc3545; }
-.description-button { color: #007bff; }
-.save-description-button { color: #ffc107; }
-
-.completed .task-container {
+.completed .task-text {
   text-decoration: line-through;
-  color: #aaa;
+  opacity: 0.6;
+}
+
+.task-buttons button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+
+.complete-button {
+  background: #4CAF50;
+  color: #fff;
+}
+.complete-button:hover {
+  background: #3e8e41;
+}
+
+.delete-button {
+  background: #ff4d4d;
+  color: #fff;
+}
+.delete-button:hover {
+  background: #cc0000;
+}
+
+.description-button {
+  background: #47f8e7;
+  color: #333;
+}
+.description-button:hover {
+  background: #26c6b8;
+  color: #fff;
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {opacity: 0; transform: translateY(5px);}
+  to {opacity: 1; transform: translateY(0);}
 }
