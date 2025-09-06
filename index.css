@@ -41,25 +41,25 @@ h1 {
 
 .input-group {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  width: 100%;
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+.input-group input {
   flex: 1;
   padding: 12px;
   font-size: 1rem;
   border: 2px solid #ffb6c1;
   border-radius: 10px 0 0 10px;
   outline: none;
-  transition: border 0.3s ease;
 }
 
-input[type="text"]:focus {
+.input-group input:focus {
   border-color: #ff6f91;
 }
 
-#addTaskBtn {
+.input-group button {
   padding: 0 20px;
   background-color: #ff6f91;
   color: white;
@@ -69,12 +69,13 @@ input[type="text"]:focus {
   transition: background-color 0.3s ease;
 }
 
-#addTaskBtn:hover {
+.input-group button:hover {
   background-color: #ff8fa3;
 }
 
 ul {
   list-style: none;
+  padding: 0;
   margin-top: 10px;
 }
 
@@ -109,7 +110,8 @@ ul {
 
 .task-actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
+  align-items: center;
 }
 
 .task-actions button {
@@ -125,16 +127,9 @@ ul {
 }
 
 .complete-button { color: #28a745; }
-.complete-button:hover { color: #218838; }
-
 .delete-button { color: #dc3545; }
-.delete-button:hover { color: #c82333; }
-
 .description-button { color: #007bff; }
-.description-button:hover { color: #0056b3; }
-
 .save-description-button { color: #ffc107; }
-.save-description-button:hover { color: #e0a800; }
 
 .completed .task-container {
   text-decoration: line-through;

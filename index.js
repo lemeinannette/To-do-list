@@ -14,7 +14,7 @@ function createTaskElement(taskText) {
   taskContainer.textContent = taskText;
   li.appendChild(taskContainer);
 
-  // Action buttons container
+  // Actions container
   const actions = document.createElement('div');
   actions.classList.add('task-actions');
 
