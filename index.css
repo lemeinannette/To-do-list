@@ -1,3 +1,4 @@
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,29 +7,56 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #3cd8c9, #47f8e7, #7cf0e5);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #3cd8c9, #47f8e7, #7cf0e5);
 }
 
+/* Background image container */
+.background-container {
+  position: absolute;
+  inset: 0; /* covers full screen */
+  z-index: -1; /* push it behind everything */
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3; /* subtle */
+}
+
+/* Card container */
 .container {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
   text-align: center;
+  z-index: 1;
+  animation: fadeIn 0.5s ease;
 }
 
+/* Title */
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
+/* Input + Button Group */
 .input-group {
   display: flex;
   gap: 10px;
@@ -53,15 +81,16 @@ button {
   transition: all 0.3s ease;
 }
 
+/* Add task button */
 #addTaskBtn {
   background: #3cd8c9;
   color: #fff;
 }
-
 #addTaskBtn:hover {
   background: #2cb9aa;
 }
 
+/* Task list */
 ul {
   list-style: none;
   max-height: 250px;
@@ -75,54 +104,5 @@ li {
   padding: 12px;
   border-radius: 12px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  animation: fadeIn 0.3s ease;
-}
-
-.task-text {
-  flex: 1;
-  text-align: left;
-  margin-right: 10px;
-}
-
-.completed .task-text {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
-.task-buttons button {
-  margin-left: 6px;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-}
-
-.complete-button {
-  background: #4CAF50;
-  color: #fff;
-}
-.complete-button:hover {
-  background: #3e8e41;
-}
-
-.delete-button {
-  background: #ff4d4d;
-  color: #fff;
-}
-.delete-button:hover {
-  background: #cc0000;
-}
-
-.description-button {
-  background: #47f8e7;
-  color: #333;
-}
-.description-button:hover {
-  background: #26c6b8;
-  color: #fff;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(5px);}
-  to {opacity: 1; transform: translateY(0);}
+  align
 }
